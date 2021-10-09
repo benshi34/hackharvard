@@ -12,13 +12,20 @@ $.ajax({
         const data = response.data
         data.forEach(el => {
             for(const [questions,answers] of Object.entries(el)){
-                quizBox.innerHTML += `
+                quizBox.innerHTML +=   `
                     <hr>
                     <div class="mb-2">
                         <b>${question}</b>
                     </div>
                 `
-                
+                answers.forEach(answer=>{
+                    quizBox.innerHTML += `
+                        <div>
+                            <input type="radio" class="ans" id="${question}-${ans}" name="${answer}">
+                            <lable for"${question}">${answer}</label>
+                        </div>
+                    `
+                })
             } 
         });
     },
