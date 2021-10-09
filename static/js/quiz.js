@@ -12,12 +12,12 @@ $.ajax({
         data = response.data
         data.forEach(el => {
             for(const [questions,answers] of Object.entries(el)){
-                quizBox.innerHTML +='
+                quizBox.innerHTML += `
                     <hr>
                     <div class="mb-2">
                         <b>${question}</b>
                     </div>
-                '
+                `
             } 
         });
     },
