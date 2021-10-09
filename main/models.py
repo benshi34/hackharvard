@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import random
 # Create your models here.
 
 class Student(models.Model):
@@ -18,7 +18,9 @@ class Quiz(models.Model):
         return f"{self.name}-{self.topic}"
 
     def get_question(self):
-        return self.question_set.all()[:self.number_of_questions]
+        questions = list(self.get_question.all())
+        random.shuffle(questions)
+        return questions[:self.number_of_questions]
 
     class Meta:
         verbose_name_plural = 'Quizzes'
