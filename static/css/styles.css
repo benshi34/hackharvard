@@ -9,7 +9,7 @@
 }
 
 body{
-	background: #9ecae0;
+	background: #fff;
 }
 
 .wrapper{
@@ -21,7 +21,7 @@ body{
 	width: 500px;
 	height: 400px;
 	margin: 100px auto 0;
-	background: #f94f62;
+	background: #9ecae0;
 	padding: 25px 40px;
 	position: relative;
 	border-radius: 5px;
@@ -48,7 +48,7 @@ body{
 	position: absolute;
 	top: 70px;
 	left: 40px;
-	background: #ffd300;
+	background: #25bcff;
 	width: 100%;
 	height: 100%;
 	border-radius: 5px;
@@ -62,7 +62,7 @@ body{
 	display: flex;
 	align-items: center;
 	padding: 15px 0;
-	border-bottom: 1px solid #ffe773;
+	border-bottom: 1px solid #25bcff;
 }
 
 .lboard_wrap .lboard_mem:first-child{
@@ -104,7 +104,7 @@ body{
 .lboard_wrap .lboard_mem .name_bar .bar_wrap{
 	width: 100%;
 	height: 5px;
-	background: #d5b000;
+	background: #25bcff;
 	margin-top: 5px;
 	border-radius: 5px;
 	position: relative;
