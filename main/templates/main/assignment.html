@@ -1,7 +1,10 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block title %}
+{{obj.name}}
+{% endblock title %}
 
 {% block content %}
-
+{{obj.title}}
 {% endblock %}

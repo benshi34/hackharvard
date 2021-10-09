@@ -5,8 +5,8 @@ from .models import *
 # Create your views here.
 def HomePage(request):
     context = {
-        'name'='ben shi'
-        'token' = '5'
+        'name':'ben shi',
+        'token':'5'
     }
     return render(request, 'main/home.html', context)
 
