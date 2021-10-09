@@ -18,7 +18,10 @@ class Quiz(models.Model):
         return f"{self.name}-{self.topic}"
 
     def get_question(self):
-        return self.question_set.all()
+        return self.question_set.all()[:self.number_of_questions]
+
+    class Meta:
+        verbose_name_plural = 'Quizzes'
     
 class Question(models.Model):
     text = models.CharField(max_length=200)
@@ -29,6 +32,7 @@ class Question(models.Model):
 
     def get_answers(self):
         return self.answer_set.all()
+
 
 class Answer(models.Model):
     text = models.CharField(max_length=200)
