@@ -23,6 +23,7 @@ def assignment_data_view(request, pk):
         questions.append({str(q): answers})
     return JsonResponse({
         'data': questions,
+        'time': quiz.time,
     })
 
 def save_quiz_view(request, pk):

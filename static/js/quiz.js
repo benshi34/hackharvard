@@ -1,7 +1,7 @@
 console.log('hello world quiz')
 const url = window.location.href
 
-const quizBox = document.getElementById("quiz-box")
+const quizBox = document.getElementById('quiz-box')
 let data
 
 window.myAjax = jQuery.ajax;
@@ -22,16 +22,17 @@ $.ajax({
                         <b>${question}</b>
                     </div>
                 `
-                answers.forEach(answer=>{
+                /*answers.forEach(answer=>{
                     quizBox.innerHTML += `
                         <div>
                             <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}">
                             <label for="${question}">${answer}</label>
                         </div>
                     `
-                })
+                })*/    
             }
         });
+        //activateTimer(response.time)
         
     },
     error: function(error){
