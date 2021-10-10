@@ -8,16 +8,19 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body
+{
 	background: #fff;
 }
 
-.wrapper{
+.wrapper
+{
 	width: 100%;
 	height: 100%;
 }
 
-.lboard_section{
+.lboard_section
+{
 	width: 500px;
 	height: 400px;
 	margin: 100px auto 0;
@@ -27,11 +30,13 @@ body{
 	border-radius: 5px;
 }
 
-.lboard_section .lboard_tabs ul{
+.lboard_section .lboard_tabs ul
+{
 	display: flex;
 }
 
-.lboard_section .lboard_tabs ul li{
+.lboard_section .lboard_tabs ul li
+{
 	margin-right: 50px;
 	font-size: 18px;
 	font-weight: 600;
@@ -44,7 +49,8 @@ body{
 	color: #fff;
 }
 
-.lboard_wrap{
+.lboard_wrap
+{
 	position: absolute;
 	top: 70px;
 	left: 40px;
@@ -54,54 +60,65 @@ body{
 	border-radius: 5px;
 }
 
-.lboard_wrap .lboard_item{
+.lboard_wrap .lboard_item
+{
 	padding: 25px;
 }
 
-.lboard_wrap .lboard_mem{
+.lboard_wrap .lboard_mem
+{
 	display: flex;
 	align-items: center;
 	padding: 15px 0;
 	border-bottom: 1px solid #25bcff;
 }
 
-.lboard_wrap .lboard_mem:first-child{
+.lboard_wrap .lboard_mem:first-child
+{
 	padding-top: 0;
 }
 
-.lboard_wrap .lboard_mem:last-child{
+.lboard_wrap .lboard_mem:last-child
+{
 	padding-bottom: 0;
 	border-bottom: 0;
 }
 
-.lboard_wrap .lboard_mem .img{
+.lboard_wrap .lboard_mem .img
+{
 	width: 50px;
 }
 
-.lboard_wrap .lboard_mem img{
+.lboard_wrap .lboard_mem img
+{
 	display: block;
 	width: 100%;
 }
 
-.lboard_wrap .lboard_mem .name_bar{
+.lboard_wrap .lboard_mem .name_bar
+{
 	margin: 0 20px;
 	width: calc(100% - 150px);
 }
 
-.lboard_wrap .lboard_mem .name_bar p{
-	color: #3a3d51;
+.lboard_wrap .lboard_mem .name_bar p
+{
+	color: #fff;
 }
 
-.lboard_wrap .lboard_mem .name_bar p span{
+.lboard_wrap .lboard_mem .name_bar p span
+{
 	margin-right: 5px;
 }
 
-.lboard_wrap .lboard_mem .points{
+.lboard_wrap .lboard_mem .points
+{
 	width: 100px;
-	color: #3a3d51;
+	color: #fff;
 }
 
-.lboard_wrap .lboard_mem .name_bar .bar_wrap{
+.lboard_wrap .lboard_mem .name_bar .bar_wrap
+{
 	width: 100%;
 	height: 5px;
 	background: #25bcff;
@@ -111,7 +128,8 @@ body{
 	overflow: hidden;
 }
 
-.lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar{
+.lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar
+{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -120,4 +138,11 @@ body{
 	border-radius: 5px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
+}
+
+.lboard_header h2
+{
+	color: #fff;
+	align-items: center;
+	margin: 0 20px;
 }
