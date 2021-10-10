@@ -8,10 +8,9 @@ $.ajax({
     type: 'GET',
     url: `${url}data`,
     success: function(response){
-        //console.log(response)
         const data = response.data
         data.forEach(el => {
-            for(const [questions,answers] of Object.entries(el)){
+            for (const [question, answers] of Object.entries(el)){
                 quizBox.innerHTML += `
                     <hr>
                     <div class="mb-2">
@@ -21,13 +20,15 @@ $.ajax({
                 answers.forEach(answer=>{
                     quizBox.innerHTML += `
                         <div>
-                        <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}">
-                        <label for="${question}">${answer}</label>
+                            <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}">
+                            <label for="${question}">${answer}</label>
                         </div>
                     `
                 })
-            } 
+            }
         });
+        activateTimer(response.time)
+        
     },
     error: function(error){
         console.log(error)
