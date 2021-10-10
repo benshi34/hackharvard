@@ -103,7 +103,7 @@ body
 
 .lboard_wrap .lboard_mem .name_bar p
 {
-	color: #3a3d51;
+	color: #fff;
 }
 
 .lboard_wrap .lboard_mem .name_bar p span
@@ -114,7 +114,7 @@ body
 .lboard_wrap .lboard_mem .points
 {
 	width: 100px;
-	color: #3a3d51;
+	color: #fff;
 }
 
 .lboard_wrap .lboard_mem .name_bar .bar_wrap
@@ -142,8 +142,7 @@ body
 
 .lboard_header h2
 {
-	color: #25bcff;
+	color: #fff;
 	align-items: center;
-	
-	
+	margin: 0 20px;
 }
