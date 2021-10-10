@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.views.generic import ListView
 from .models import *
 
@@ -22,7 +23,6 @@ def assignment_data_view(request, pk):
         questions.append({str(q): answers})
     return JsonResponse({
         'data': questions,
-        'time': quiz.time,
     })
 
 def LeaderBoardPage(request):
