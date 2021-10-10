@@ -4,6 +4,11 @@ const url = window.location.href
 const quizBox = document.getElementById('quiz-box')
 let data
 
+window.myAjax = jQuery.ajax;
+$( "#upload" ).change(function() {
+console.log(window.myAjax);
+console.log(window.jQuery.ajax);
+
 $.ajax({
     type: 'GET',
     url: `${url}data`,
@@ -33,4 +38,74 @@ $.ajax({
     error: function(error){
         console.log(error)
     }
+})
+})
+
+const quizForm = document.getElementById('quiz-form')
+const csrf = document.getElementsByName('csrfmiddlewaretoken')
+
+const sendData = () => {
+    const elements = [...document.getElementsByClassName('ans')]
+    const data = {}
+    data['csrfmiddlewaretoken'] = csrf[0].value
+    elements.forEach(el=>{
+        if (el.checked) {
+            data[el.name] = el.value
+        } else {
+            if (!data[el.name]) {
+                data[el.name] = null
+            }
+        }
+    })
+
+    $.ajax({
+        type: 'POST',
+        url: `${url}save/`,
+        data: data,
+        success: function(response){
+            const results = response.results
+            console.log(results)
+            quizForm.classList.add('not-visible')
+
+            scoreBox.innerHTML = `${response.passed ? 'Congratulations! ' : 'Ups..:( '}Your result is ${response.score.toFixed(2)}%`
+
+            results.forEach(res=>{
+                const resDiv = document.createElement("div")
+                for (const [question, resp] of Object.entries(res)){
+
+                    resDiv.innerHTML += question
+                    const cls = ['container', 'p-3', 'text-light', 'h6']
+                    resDiv.classList.add(...cls)
+
+                    if (resp=='not answered') {
+                        resDiv.innerHTML += '- not answered'
+                        resDiv.classList.add('bg-danger')
+                    }
+                    else {
+                        const answer = resp['answered']
+                        const correct = resp['correct_answer']
+
+                        if (answer == correct) {
+                            resDiv.classList.add('bg-success')
+                            resDiv.innerHTML += ` answered: ${answer}`
+                        } else {
+                            resDiv.classList.add('bg-danger')
+                            resDiv.innerHTML += ` | correct answer: ${correct}`
+                            resDiv.innerHTML += ` | answered: ${answer}`
+                        }
+                    }
+                }
+                resultBox.append(resDiv)
+            })
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
+}
+
+quizForm.addEventListener('submit', e=>{
+    e.preventDefault()
+
+    sendData()
 })
